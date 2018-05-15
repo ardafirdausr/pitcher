@@ -1,0 +1,77 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.no-padding{
+  padding: 0px !important;
+}
+.no-padding-left{
+  padding-left: 0px !important;
+}
+.no-padding-right{
+  padding-right: 0px !important;
+}
+.no-padding-top{
+  padding-top: 0px !important;
+}
+.no-padding-bottom{
+  padding-bottom: 0px !important;
+}
+
+#app{
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  // background-color: #eaeaea;
+  // background: #fafafa;
+  background: #edeff0;
+  // background: #fafaff;
+
+  .main-header{
+    max-height: 45px;
+    .header-user{
+      //header
+    }
+  }
+  .main-container{        
+    margin-top: 45px;    
+    flex-grow: 1;        
+    // home resource style
+    @import './home/guest.scss';
+    // auth resource style
+    @import './auth/login.scss';
+    @import './auth/register.scss';
+    // profile resource style
+    @import './user/profile/edit.scss';
+    @import './user/profile/show.scss';
+    // identity resource style
+    @import './user/identity/create.scss';
+    // user style
+    @import './user/edit.scss';
+    //course style
+    @import './course/index.scss';
+    @import './course/create.scss';
+    //search
+    @import './search.scss';        
+  }
+  .main-footer{
+    // margin-top: 40px;
+  }
+
+  .clickable{
+    cursor: pointer;
+  }
+}
+
+

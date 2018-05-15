@@ -1,0 +1,24 @@
+.login-page{
+    min-height: calc(100vh - 45px);    
+    background: #434750;
+    background:  linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+    ), url('../../../../public/image/background2.jpg') no-repeat center fixed;                
+}
+.login-container{
+    height: 100%;
+    width: 100%;    
+    .login{
+
+        .login__title{            
+            text-align: center;
+        }
+
+        .login__content{
+
+        }
+    }
+
+
+}

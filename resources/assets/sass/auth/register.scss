@@ -1,0 +1,26 @@
+.register-page{    
+    min-height: calc(100vh - 45px);    
+    background: #434750;
+    background:  linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+    ), url('../../../../public/image/background2.jpg') no-repeat center fixed;            
+
+    .register-container{
+        &:before{
+            filter: blur(5px);
+        }
+        height: 100%;
+        width: 100%;        
+        .register{
+
+            &__title{                
+                text-align: center;
+            }
+
+            &__content{
+
+            }
+        }
+    }
+}

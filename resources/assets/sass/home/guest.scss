@@ -1,0 +1,73 @@
+.home-landing{    
+    min-height: calc(100vh - 45px);                
+    background:  linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+    ), url('../../../public/image/landing.jpg') no-repeat center fixed;
+    display: flex;      
+    justify-content: flex-start;
+    align-items: center;
+    
+    &-content{                       
+        height: 240px;      
+        width: 350px;        
+        margin: 40px;
+        display: flex;        
+        flex-direction: column;
+        justify-content: space-around;
+    
+        &__title{
+            font-size: 60px;
+            color: white !important;
+            font-family: 'Raleway', sans-serif !important;                       
+            letter-spacing: 5px !important;
+            font-weight: 100px !important;            
+        }   
+    
+        &__subtitle{
+            color: white !important;
+            font-family: 'Raleway', sans-serif !important;                        
+        }     
+    }    
+}
+
+.home-pro{ 
+    min-height: 550px;
+    padding: 100px 0px;
+
+    &-card{
+        cursor: pointer;          
+        
+        & > *:hover{
+            color: orange;
+        }
+
+        &__image{
+            padding-top: 30px;
+            font-size: 60px;            
+            text-align: center;
+            vertical-align: baseline;
+            vertical-align: top;
+        }
+
+        &__content{
+            text-align: center            
+        }
+    }    
+}
+
+.home-flow{    
+    background-color: white;    
+
+    &-header{
+        text-align: center;        
+        
+        &__title{
+            text-align: center;            
+        }        
+    }
+}
+
+.home-category{
+    padding: 50px;
+}
