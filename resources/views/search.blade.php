@@ -67,7 +67,7 @@
             <div class="ui three column grid">                    
                 @foreach($results as $result)
                     <div class="ui column">
-                        <div class="ui card">
+                        <div class="ui link card">
                             <div class="content">
                                 <div class="header">{{ $result->judul }}</div>
                                     <div class="meta">
@@ -89,7 +89,7 @@
                                 </div>
                             </div>            
                             <div 
-                              class="ui bottom attached button add-course">
+                                class="ui bottom attached button add-course" value="{{ $result->id }}">
                                 <div class="left floated"><i class="add icon"></i> Add Course</div>                    
                                 <div class="right floated">Rp. {{ $result->harga }}</div>
                             </div>

@@ -17,6 +17,6 @@ class Course extends Model
     }
 
     public function takenBy(){
-        return $this->belongsToMany(User\User::class);
+        return $this->belongsToMany(User\User::class, 'course_user')->withPivot('user_id', 'course_id');
     }
 }

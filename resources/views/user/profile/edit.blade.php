@@ -133,8 +133,8 @@
                     <label>Biodata</label>
                     <textarea name="biodata" rows="2" style="margin-top: 0px; margin-bottom: 0px; height: 75px;"> {{ $userProfile->biodata ?? ''}}</textarea>
                 </div>                
-                {{--  --}}
-                <div class="field">                    
+                
+                {{-- <div class="field">                    
                     <div class="ui styled fluid accordion">                    
                         <div class="title">
                           <i class="dropdown icon"></i>
@@ -144,8 +144,8 @@
                           <p class="transition hidden">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
                         </div>                    
                     </div>                    
-                </div>
-                {{--  --}}
+                </div> --}}
+                
                 <input class="ui right floated button blue" type="submit" value="Submit"></input>                
             </form>                                    
             <div class="ui left floated button clickable" onclick='window.location.href = "{{route('user.profile.show', ['id' => Auth::user()->id])}}"'>                            

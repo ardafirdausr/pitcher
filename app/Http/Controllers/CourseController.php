@@ -76,7 +76,9 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $result = Course::where('id', $id)->first();        
+        $categories = Category::get();
+        return view('course.edit', compact('result', 'categories'));
     }
 
     /**
@@ -88,7 +90,19 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'judul' => 'required',
+            'kategori' => 'required',
+            'deskripsi' => 'required|max:255',
+            'harga' => 'required|numeric'
+        ]);        
+        Course::where('id', $id)->update([
+            'judul' => $request->judul,
+            'category_id' => $request->kategori,
+            'harga' => $request->harga,
+            'deskripsi' => $request->deskripsi
+        ]);
+        return redirect()->route('course.index');
     }
 
     /**
@@ -99,13 +113,29 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Course::where('id', $id)->delete();        
+        return redirect()->route('course.index');
     }
     
-    public function addCourse(Request $request){                
-        User::find(Auth::user()->id)->course()->sync([
-            $request->id
-        ]);
-        return response('tes'); 
+    public function addCourse(Request $request){                        
+        User::find(Auth::user()->id)->take()->attach([$request->id]);
+        return response("Pelajaran Berhasil ditambahkan"); 
+    }
+
+    public function deleteCourse(Request $request){
+        $price = Course::find($request->id)->first()->harga;
+        User::find(Auth::user()->id)->take()->detach([$request->id]);         
+        return response($price); 
+    }
+
+    public function payment(){           
+        $courses = Course::whereHas('takenBy', function($q){                
+                $q->where('user_id', Auth::user()->id);
+            })->get();                                            
+        // $c = User::find(1);                
+        // foreach($c->take as $tes){
+        //     dd($tes->pivot->user_id);
+        // }        
+        return view('course.pay', compact('courses'));
     }
 }

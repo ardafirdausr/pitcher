@@ -23,7 +23,9 @@ Route::get('search', [
 Route::group(['middleware' => ['web', 'auth']], function(){ 
     Route::resource('course', 'CourseController');    
     Route::post('course/add', 'CourseController@addCourse')->name('course.add');
-    
+    Route::post('course/delete', 'CourseController@deleteCourse');
+    // Route::get('course/payment', 'CourseController@payment')->name('course.payment');
+    Route::get('payment', 'CourseController@payment')->name('course.payment');
     Route::group(['namespace' => 'User'], function(){ 
         Route::resource('user',  'UserController');
         Route::group(
@@ -44,7 +46,7 @@ Route::prefix('indonesia')->group(function(){
     Route::get('/provincies', 'IndonesiaController@allProvincies');
     Route::get('/province/{id}', 'IndonesiaController@getProvince');
     Route::get('/province/{id}/cities', 'IndonesiaController@getCitiesByProvince');
-    Route::get('/province/{id}/city/{id}', 'IndonesiaController@getCityByProvince');
+    Route::get('/province/{id}/city/{city}', 'IndonesiaController@getCityByProvince');
     Route::get('/cities', 'IndonesiaController@allCities');
     Route::get('/city/{id}', 'IndonesiaController@getCity');
     //...more fore district

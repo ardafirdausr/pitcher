@@ -6,18 +6,18 @@ $(document).ready(function(){
         }
     });
 
-    $('.add-course').click(function(){               
+    $('.deleteCourse').click(function(){               
         var token = $('#ajax').attr('value');
         var id = event.target.getAttribute('value');                
         $.ajax({
-            url: window.location.origin + '/course/add',            
+            url: window.location.origin + '/course/delete',            
             type: "post",
             data: {
                 _token: token,                
                 id: id
             },
-            success: function(respond){        
-                alert(respond);        
+            success: function(respond){                                        
+                $('#total').html(Number($('#total').html()) - Number(respond));
             }
         })        
     });

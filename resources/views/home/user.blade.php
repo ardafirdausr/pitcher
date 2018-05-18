@@ -1,9 +1,10 @@
+<div id="ajax" value="{{ csrf_token() }}" style:"display: none"></div>
 <div class="ui grid home-category centered">            
     <div class="sixteen wide column">
         <h2 class="ui dividing header">Pelajaran Populer</h2>
     </div>
     <div class="sixteen wide column">
-        <div class="ui four column grid">                    
+        <div class="ui four column grid">                            
             @foreach($results as $result)
             <div class="ui column">
                 <div class="ui card">
@@ -28,7 +29,7 @@
                         </div>
                     </div>            
                     <div 
-                        class="ui bottom attached button">
+                        class="ui bottom attached button add-course" value="{{ $result->id }}">
                         <div class="left floated"><i class="add icon"></i> Add Course</div>                    
                         <div class="right floated">Rp. {{ $result->harga }}</div>
                     </div>
