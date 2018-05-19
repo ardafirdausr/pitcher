@@ -17,16 +17,16 @@ class SearchController extends Controller
         //     'category' => function($query){
         //         $query->where('id', 9);
         //     }
-        // ])->get();          
+        // ])->get();                  
         $results = Course::where('judul', 'like', "%$request->pelajaran%")
                       ->where('harga', '<=', $request->nominal ?? 100000000)
                       ->whereHas('category', function($q){
                         global $request;
                          $q->where('id', 'like', $request->kategori ?? "%%");
-                    })->whereHas('user.profile', function($q){ //wtf
+                    })->whereHas('user.profile', function($q){ 
                         global $request;
                         $q->where('kota_mengajar', 'like', $request->kota ?? "%%");
-                    })->paginate(9)->appends($request->except('page'));       //wew             
+                    })->paginate(9)->appends($request->except('page'));               
         return view('search', compact('categories', 'results', 'cities'));
     }
 }

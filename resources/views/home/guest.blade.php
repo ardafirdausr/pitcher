@@ -35,7 +35,7 @@
 
             </div>
             <div class="four wide column">
-                <div class="ui card home-pro-card">
+                <div class="ui link card home-pro-card">
                     <div class="image home-pro-card__image">
                         <i class="thumbs up outline icon"></i>                        
                     </div>
@@ -48,7 +48,7 @@
                 </div>
             </div>            
             <div class="four wide column">
-                <div class="ui card home-pro-card">
+                <div class="ui link card home-pro-card">
                     <div class="image home-pro-card__image">
                         <i class="check circle outline icon"></i>
                     </div>
@@ -61,7 +61,7 @@
                 </div>
             </div> 
             <div class="four wide column">
-                <div class="ui card home-pro-card">
+                <div class="ui link card home-pro-card">
                     <div class="image home-pro-card__image">
                         <i class="calendar check outline icon"></i>
                     </div>
@@ -74,7 +74,7 @@
                 </div>
             </div> 
             <div class="four wide column">
-                <div class="ui card home-pro-card">
+                <div class="ui link card home-pro-card">
                     <div class="image home-pro-card__image">
                         <i class="key icon"></i>
                     </div>

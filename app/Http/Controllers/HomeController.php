@@ -25,7 +25,10 @@ class HomeController extends Controller
     public function index()
     {                
         return view('home.home', [
-            'results' => Course::orderBy('id')->paginate(8)
+            'results' => Course::whereHas('user.profile', function($q){ 
+                global $request;
+                $q->where('kota_mengajar', 'like', $request->kota ?? "%%");
+            })->orderBy('id')->paginate(8)
         ]);
     }
 }
