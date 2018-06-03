@@ -20,21 +20,20 @@ Route::get('search', [
 ]);
 
 
-Route::group(['middleware' => ['web', 'auth']], function(){ 
+Route::group(['middleware' => ['web', 'auth']], function(){ //middleware diakses sebelum ke controller 
     Route::resource('course', 'CourseController');    
     Route::post('course/add', 'CourseController@addCourse')->name('course.add');
     Route::post('course/delete', 'CourseController@deleteCourse');
     // Route::get('course/payment', 'CourseController@payment')->name('course.payment');
     Route::get('payment', 'CourseController@payment')->name('course.payment');
-    Route::group(['namespace' => 'User'], function(){ 
+    Route::group(['namespace' => 'User'], function(){ //namespace untuk lokasi folder controller yang handle
         Route::resource('user',  'UserController');
         Route::group(
             [                   
-                'prefix' => 'user', 
-                'as' => 'user.'     
+                'prefix' => 'user', //prefix untuk link yang dihasilkan
+                'as' => 'user.'  //name untuk akses route   
             ], function(){
-                Route::resource('profile', 'ProfileController');
-                
+                Route::resource('profile', 'ProfileController');                
                 Route::resource('identity', 'IdentityController');
         });
     });        
