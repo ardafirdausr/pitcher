@@ -41,11 +41,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'pitcher.freevar.com'),
+            'host' => env('DB_HOST', 'db4free.net'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', '1109566'),
-            'username' => env('DB_USERNAME', '1109566'),
-            'password' => env('DB_PASSWORD', 'rahasia'),
+            'database' => env('DB_DATABASE', 'pitcher'),
+            'username' => env('DB_USERNAME', 'pitcher'),
+            'password' => env('DB_PASSWORD', 'rahasiasekali'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
