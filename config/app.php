@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://db4free.net'),
+    'url' => env('APP_URL', 'https://pitcher.herokuapp.com/'),
 
     /*
     |--------------------------------------------------------------------------
